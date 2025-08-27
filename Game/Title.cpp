@@ -9,7 +9,7 @@ Title::Title()
 }
 Title::~Title()
 {
-
+	
 }
 
 bool Title::Start()
@@ -52,6 +52,7 @@ void Title::Update()
 		SoundManager* sound = FindGO<SoundManager>("soundManager");
 		//BGM‚ÌÄ¶B
 		m_titleDecisionSE = sound->PlayingSound(Sound::enSound_DecisionSE, false);
+		DeleteGO(m_titleBGM);
 		NewGO<Game>(0, "Game");
 		DeleteGO(this);
 	}
